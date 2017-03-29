@@ -8,6 +8,7 @@ import dagger.android.AndroidInjectionModule;
  */
 @Component(modules = {
     ApplicationModule.class, AndroidInjectionModule.class, DemoActivityModule.class,
+    Demo2ActivityModule.class,
 }) interface DemoApplicationComponent {
   DemoApplication injectApplication(DemoApplication application);
 }

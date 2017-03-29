@@ -3,18 +3,21 @@ package dagger.demo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import dagger.android.AndroidInjection;
 import dagger.android.DaggerActivity;
+import javax.inject.Inject;
 
 public class DemoActivity extends DaggerActivity {
+  @Inject DemoPresenter demoPresenter;
+
   @Override protected void onCreate(Bundle savedInstanceState) {
-    AndroidInjection.inject(this);
     super.onCreate(savedInstanceState);
 
     setContentView(R.layout.activity_demo);
     if (savedInstanceState == null) {
       getFragmentManager().beginTransaction().add(R.id.container, new DemoFragment()).commit();
     }
+
+    demoPresenter.log();
   }
 
   @Override public boolean onCreateOptionsMenu(Menu menu) {
