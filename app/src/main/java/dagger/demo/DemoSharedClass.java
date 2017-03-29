@@ -3,10 +3,10 @@ package dagger.demo;
 import android.app.Activity;
 import javax.inject.Inject;
 
-public class DemoPresenter {
+public class DemoSharedClass {
   Activity activity;
 
-  @Inject public DemoPresenter(Activity activity) {
+  @Inject public DemoSharedClass(Activity activity) {
     this.activity = activity;
   }
 

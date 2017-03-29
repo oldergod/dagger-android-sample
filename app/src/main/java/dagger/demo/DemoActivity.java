@@ -7,7 +7,7 @@ import dagger.android.DaggerActivity;
 import javax.inject.Inject;
 
 public class DemoActivity extends DaggerActivity {
-  @Inject DemoPresenter demoPresenter;
+  @Inject DemoSharedClass demoSharedClass;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -17,7 +17,7 @@ public class DemoActivity extends DaggerActivity {
       getFragmentManager().beginTransaction().add(R.id.container, new DemoFragment()).commit();
     }
 
-    demoPresenter.log();
+    demoSharedClass.log();
   }
 
   @Override public boolean onCreateOptionsMenu(Menu menu) {

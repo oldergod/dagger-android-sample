@@ -5,7 +5,7 @@ import dagger.android.DaggerActivity;
 import javax.inject.Inject;
 
 public class Demo2Activity extends DaggerActivity {
-  @Inject DemoPresenter demoPresenter;
+  @Inject DemoSharedClass demoSharedClass;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
