@@ -3,12 +3,10 @@ package dagger.demo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import dagger.android.AndroidInjection;
 import dagger.android.DaggerActivity;
 
 public class DemoActivity extends DaggerActivity {
   @Override protected void onCreate(Bundle savedInstanceState) {
-    AndroidInjection.inject(this);
     super.onCreate(savedInstanceState);
 
     setContentView(R.layout.activity_demo);

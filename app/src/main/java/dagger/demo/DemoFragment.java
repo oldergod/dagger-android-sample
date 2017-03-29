@@ -1,19 +1,18 @@
 package dagger.demo;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import dagger.android.AndroidInjection;
+import dagger.android.DaggerFragment;
 
 /**
  * A placeholder fragment containing a simple view.
  */
-public class DemoFragment extends Fragment {
+public class DemoFragment extends DaggerFragment {
   @Override public void onAttach(Context context) {
-    AndroidInjection.inject(this);
     super.onAttach(context);
   }
 
