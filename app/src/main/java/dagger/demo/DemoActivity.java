@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import dagger.android.DaggerActivity;
+import javax.inject.Inject;
 
 public class DemoActivity extends DaggerActivity {
+  @Inject DemoSharedClass demoSharedClass;
+
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
@@ -13,6 +16,8 @@ public class DemoActivity extends DaggerActivity {
     if (savedInstanceState == null) {
       getFragmentManager().beginTransaction().add(R.id.container, new DemoFragment()).commit();
     }
+
+    demoSharedClass.log();
   }
 
   @Override public boolean onCreateOptionsMenu(Menu menu) {
