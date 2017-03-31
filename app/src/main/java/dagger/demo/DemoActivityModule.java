@@ -14,6 +14,4 @@ import dagger.multibindings.IntoMap;
   @Binds @IntoMap @ActivityKey(DemoActivity.class)
   abstract AndroidInjector.Factory<? extends Activity> bindDemoActivityInjectorFactory(
       DemoActivitySubcomponent.Builder builder);
-
-  @Binds abstract Activity bindActivity(DemoActivity demoActivity);
 }

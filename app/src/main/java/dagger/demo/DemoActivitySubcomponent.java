@@ -8,7 +8,7 @@ import dagger.android.AndroidInjector;
  */
 @Subcomponent(modules = {
     DemoFragmentModule.class,
-    DemoActivityModule.class, //
+    DemoActivityInnerModule.class, //
 }) public interface DemoActivitySubcomponent extends AndroidInjector<DemoActivity> {
   @Subcomponent.Builder abstract class Builder extends AndroidInjector.Builder<DemoActivity> {
   }
