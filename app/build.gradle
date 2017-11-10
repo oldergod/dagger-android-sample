@@ -2,26 +2,27 @@ apply plugin: 'com.android.application'
 
 repositories {
   maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+  google()
 }
 
 android {
-  compileSdkVersion 25
-  buildToolsVersion '25.0.2'
+  compileSdkVersion 26
+  buildToolsVersion '26.0.2'
 
   defaultConfig {
     applicationId 'dagger.demo'
     minSdkVersion 15
-    targetSdkVersion 25
+    targetSdkVersion 26
     versionCode 1
     versionName '1.0'
   }
 }
 
 dependencies {
-  compile 'com.google.dagger:dagger:HEAD-SNAPSHOT'
-  compile 'com.google.dagger:dagger-android:HEAD-SNAPSHOT'
-  compile 'com.android.support:appcompat-v7:25.3.0'
+  compile 'com.google.dagger:dagger:2.12'
+  compile 'com.google.dagger:dagger-android:2.12'
+  compile 'com.android.support:appcompat-v7:26.1.0'
   compile 'com.android.support.constraint:constraint-layout:1.0.2'
-  annotationProcessor 'com.google.dagger:dagger-android-processor:HEAD-SNAPSHOT'
-  annotationProcessor 'com.google.dagger:dagger-compiler:HEAD-SNAPSHOT'
+  annotationProcessor 'com.google.dagger:dagger-android-processor:2.12'
+  annotationProcessor 'com.google.dagger:dagger-compiler:2.12'
 }

@@ -1,27 +1,17 @@
 package dagger.demo;
 
-import android.app.Activity;
-import android.app.Application;
-import dagger.android.DispatchingAndroidInjector;
-import dagger.android.HasActivityInjector;
+import dagger.android.AndroidInjector;
+import dagger.android.DaggerApplication;
 import javax.inject.Inject;
 
-/**
- * Created by gak on 9/25/14.
- */
-public class DemoApplication extends Application implements HasActivityInjector {
-  @Inject DispatchingAndroidInjector<Activity> dispatchingActivityInjector;
+public class DemoApplication extends DaggerApplication {
+  @Inject Foo foo;
 
-  @Override public void onCreate() {
-    super.onCreate();
-
-    DaggerDemoApplicationComponent.builder()
-        .applicationModule(new ApplicationModule(this))
-        .build()
-        .injectApplication(this);
+  @Override protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
+    return DaggerDemoApplicationComponent.builder().application(this).build();
   }
 
-  @Override public DispatchingAndroidInjector<Activity> activityInjector() {
-    return dispatchingActivityInjector;
+  public Foo getFoo() {
+    return foo;
   }
 }
